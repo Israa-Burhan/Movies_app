@@ -1,0 +1,106 @@
+<nav class="navbar navbar-expand-lg">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Noxe</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a
+            *ngIf="isLogin"
+            class="nav-link"
+            routerLink="home"
+            routerLinkActive="active"
+            >Home</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            *ngIf="isLogin"
+            class="nav-link"
+            routerLink="movies"
+            routerLinkActive="active"
+            >Movies</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            *ngIf="isLogin"
+            class="nav-link"
+            routerLink="people"
+            routerLinkActive="active"
+            >People</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            *ngIf="isLogin"
+            class="nav-link"
+            routerLink="tv"
+            routerLinkActive="active"
+            >Tv</a
+          >
+        </li>
+      </ul>
+      <ul class="navbar-nav mb-2 mb-lg-0">
+        <li class="nav-item d-flex align-items-center">
+          <i class="fab mx-2 fa-facebook"></i>
+          <i class="fab mx-2 fa-youtube"></i>
+          <i class="fab mx-2 fa-instagram"></i>
+          <i class="fab mx-2 fa-soundcloud"></i>
+          <i class="fab mx-2 fa-spotify"></i>
+        </li>
+        <li class="nav-item d-flex align-items-center">
+          <span *ngIf="isLogin">hello {{ userInfo.getValue().firstName }}</span>
+        </li>
+
+        <li *ngIf="isLogin" class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            routerLink="setting"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            settings
+          </a>
+          <ul class="dropdown-menu">
+            <li>
+              <a class="dropdown-item" routerLink="setting/privcy">privcy</a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a
+            *ngIf="!isLogin"
+            class="nav-link"
+            routerLink="login"
+            routerLinkActive="active"
+            >Login</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            *ngIf="!isLogin"
+            class="nav-link"
+            routerLink="register"
+            routerLinkActive="active"
+            >Register</a
+          >
+        </li>
+        <li class="nav-item">
+          <a (click)="logout()" *ngIf="isLogin" class="nav-link">Logout</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

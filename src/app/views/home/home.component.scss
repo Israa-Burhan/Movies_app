@@ -1,0 +1,38 @@
+header {
+  background-image: url(../../../assets/q1236kbavif.webp);
+  background-size: cover;
+  background-position: center center;
+}
+.brdr {
+  background-color: #a8a8a83d;
+  height: 1px;
+}
+.brdrh2 {
+  letter-spacing: 3px;
+}
+
+.scnd-lyr {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+  transition: 0.5s ease;
+}
+
+.scnd-lyrh4 {
+  letter-spacing: 6px;
+  transition: 0.5s ease;
+  text-shadow: 2px 2px 4px #24baef, 2px 2px 4px #24baef;
+}
+
+.scnd-lyr:hover {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  opacity: 1;
+}
+.scnd-lyr:hover .scnd-lyrh4 {
+  letter-spacing: 0;
+}
